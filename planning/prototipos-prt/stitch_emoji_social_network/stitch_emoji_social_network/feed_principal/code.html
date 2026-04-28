@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#999077",
+                        "on-surface": "#e5e2e3",
+                        "surface-dim": "#131314",
+                        "surface-variant": "#353436",
+                        "surface-container": "#1f1f20",
+                        "tertiary-fixed-dim": "#dbc90a",
+                        "tertiary-container": "#f0dc2a",
+                        "on-primary": "#3a3000",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-primary-fixed": "#221b00",
+                        "primary-fixed": "#ffe16d",
+                        "surface-bright": "#39393a",
+                        "on-secondary": "#2f3131",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-container": "#6a6000",
+                        "secondary-fixed": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#4f4800",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4d4732",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#f9e534",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary": "#363100",
+                        "inverse-surface": "#e5e2e3",
+                        "inverse-primary": "#705d00",
+                        "background": "#131314",
+                        "tertiary": "#fff7cf",
+                        "surface-container-low": "#1b1b1c",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353436",
+                        "on-tertiary-fixed": "#201c00",
+                        "inverse-on-surface": "#303031",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-tint": "#e9c400",
+                        "on-background": "#e5e2e3",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface": "#131314",
+                        "on-primary-container": "#705e00",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary-container": "#454747",
+                        "primary": "#fff6df",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#544600",
+                        "primary-container": "#ffd700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "margin": "20px",
+                        "xxl": "48px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Spline Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Spline Sans"],
+                        "headline-lg": ["Spline Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 31, 32, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .emoji-shadow {
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-zinc-950/80 backdrop-blur-md border-b border-white/10 shadow-lg shadow-yellow-400/5">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-zinc-400 hover:text-yellow-300 transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-black italic text-yellow-400 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)] font-['Spline_Sans'] tracking-tight">eMojo</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-zinc-400 hover:text-yellow-300 transition-all">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-margin pt-lg pb-xxl space-y-lg">
+<!-- Story/Active Circle (Bento-ish teaser) -->
+<section class="flex gap-md overflow-x-auto pb-sm no-scrollbar">
+<div class="flex-shrink-0 w-20 flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary-container to-tertiary-container">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Close-up portrait of a stylish man with warm studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL5lxgrqOMSjg4UCzxOghWSwqqgvM2w0cqpR13VMUWu3Y9NuHauLy4oyuwmiopZRaIL2LXEsLl2P4tamr0aUpjg3LkSrr6Afbx0hOoSi3tfG7SjqbTvi684qYLsMcvlK_8CULCKZN5d4nbK8_Si8bfzeaYaLsD_YyZeCU1HBhRibol1hYhclFvWlN4_YnNObQfDO7LhUtal9x4yqNTqISGZ9WqATrYHCBxdTXXiOYtH__IcIWpsPHB_vJwzqCSxhC5KRAFeBgN-EE"/>
+</div>
+</div>
+<span class="font-label-sm text-on-surface-variant truncate w-full text-center">You</span>
+</div>
+<!-- Repeated Stories -->
+<div class="flex-shrink-0 w-20 flex flex-col items-center gap-xs opacity-80">
+<div class="w-16 h-16 rounded-full p-[2px] bg-outline-variant">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Portrait of a smiling woman with colorful neon lighting in a futuristic city setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7PzQVuBRSBx5BWrUUK6yfoiH7DsYhz0xLbFj-uIgWNdUT2XFJathy-B7VrzW_VY5IznNp1QAXyhg2ts2R7arnLnhnCS0QqTCle_jObjJ2A7rEdHGZrt-E2-muJ77c-LWtT0KrajVfNfjNZ0qwTFU1s_SwrAY3dnypy1hbKRHXzTtqVAl7em5DW8zeLnCUZmP2uqxkMU5LE4Y45qaEOecaAMfPAwHeZ4YUXR9UabHlOvJu4o6oaD8HvsSvqecfQsqzKawZPjAr4U"/>
+</div>
+</div>
+<span class="font-label-sm text-on-surface-variant truncate w-full text-center">sarah_vibe</span>
+</div>
+<div class="flex-shrink-0 w-20 flex flex-col items-center gap-xs opacity-80">
+<div class="w-16 h-16 rounded-full p-[2px] bg-outline-variant">
+<div class="w-full h-full rounded-full border-2 border-surface overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Young man with glasses looking into camera with soft natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA83erAcsZJ4DC_6k5B_1HCEhydz2SiYFghCJIwobe878pwRufWgDjOj0SBKqIJMlxQsCNHVhKOt4T1frOQFbJ77IkW0JmGBnnf-wn3DITQmAfNiuCI4kj6CrbxGVgrm1RAB8cUIabbVlal9wbQAVHQAIOOm7PS9M-OFaEsNGwVErYdZPiChGu4R_0hQdQk5YBa3Q4_sCT_CO-d2PMCMpAmigUFxjzWvizh2ZXRynQP-ICRfN6E8S7NRUWYjs-JzFgZuEtaJ5hM8BU"/>
+</div>
+</div>
+<span class="font-label-sm text-on-surface-variant truncate w-full text-center">pixel_guru</span>
+</div>
+</section>
+<!-- Feed Posts -->
+<article class="glass-card rounded-xl overflow-hidden shadow-2xl">
+<!-- User Header -->
+<div class="p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Avatar" class="w-10 h-10 rounded-full object-cover border border-white/10" data-alt="Close-up of a creative professional in a modern studio environment with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwNU7WXaR5SwbnI52r7vZLXu4WlBuQJPSsDUAJ27qWu9hb8gayJhk0qhGN9h6BEX9njK9BNMFhpkzj1b_37qwnaU2RYqhIwCcXk3T-JdnxG58LNMHTvIAqvVASYKE4fpoUG1ByOeKruej0SUhVHf10H--1riAtOEqaEQMrnEAnKQ5BPAzIWvoitraJGuE8NxE34-J9fkU2UojN2eCvtF4SzmpqP17PlZtWsqhfi12WY6inFRTa7acoYRiqlaM2bmGhUjdjL7mNbOg"/>
+<div>
+<h3 class="font-label-lg text-on-surface">leo_express</h3>
+<p class="font-label-sm text-zinc-500">2h ago • Downtown</p>
+</div>
+</div>
+<button class="text-zinc-500 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Large Emoji Frame -->
+<div class="w-full aspect-square bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-400/10 via-transparent to-transparent"></div>
+<span class="text-[12rem] emoji-shadow select-none">🚀</span>
+</div>
+<!-- Post Content -->
+<div class="p-md space-y-md">
+<div class="flex items-center gap-lg">
+<button class="flex items-center gap-xs text-yellow-400 group active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg">1.2k</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg">48</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+<div class="space-y-xs">
+<p class="font-body-md text-on-surface leading-relaxed">
+<span class="font-bold mr-xs">leo_express</span>
+                        Just launched my new project! To the moon and beyond. Grateful for the team and the crazy late nights. #vibes #startup #tech
+                    </p>
+<button class="text-zinc-500 font-label-sm hover:underline">View all 48 comments</button>
+</div>
+</div>
+</article>
+<article class="glass-card rounded-xl overflow-hidden shadow-2xl">
+<!-- User Header -->
+<div class="p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Avatar" class="w-10 h-10 rounded-full object-cover border border-white/10" data-alt="Young woman with a friendly expression and urban street background in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMjdzuQby_1yMODtbOlJltdJqBdUuaL5cB9Gi42CxCv1MTGane-hWjOZU2N9fEHdkxDtz13rJ4P8xHXSJZ59v8B71EeV9i8bqfIsLFNCrJezAzORblvyGUN4571y3LipEbXUmUvysFmn4A8kBpk6am0BR0fDEpLe_CDb8kH9-jk1vdHxq78S2fgfIg76My8SjvckcK5LKquomUrIuHCyvt5Lq64nkLVqUMFO3MmTqng4-riqFfYxjqBU8ESTJryjwYpGYnektGT3Q"/>
+<div>
+<h3 class="font-label-lg text-on-surface">maya_design</h3>
+<p class="font-label-sm text-zinc-500">5h ago • Creative Studio</p>
+</div>
+</div>
+<button class="text-zinc-500 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Large Emoji Frame -->
+<div class="w-full aspect-square bg-gradient-to-tr from-zinc-900 to-black flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-400/10 via-transparent to-transparent"></div>
+<span class="text-[12rem] emoji-shadow select-none">🔥</span>
+</div>
+<!-- Post Content -->
+<div class="p-md space-y-md">
+<div class="flex items-center gap-lg">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-yellow-400 transition-colors active:scale-90 group">
+<span class="material-symbols-outlined group-hover:fill-current" data-icon="favorite">favorite</span>
+<span class="font-label-lg">892</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg">12</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+<div class="space-y-xs">
+<p class="font-body-md text-on-surface leading-relaxed">
+<span class="font-bold mr-xs">maya_design</span>
+                        Current mood while finishing up the brand identity for the next big thing. The energy is unreal today! ⚡️
+                    </p>
+<button class="text-zinc-500 font-label-sm hover:underline">View all 12 comments</button>
+</div>
+</div>
+</article>
+<!-- Reaction Bar (Floating Interaction) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 glass-card px-4 py-2 rounded-full flex gap-4 items-center shadow-2xl z-40 border-primary-container/20">
+<span class="text-xl cursor-pointer hover:scale-125 transition-transform">🤩</span>
+<span class="text-xl cursor-pointer hover:scale-125 transition-transform">🙌</span>
+<span class="text-xl cursor-pointer hover:scale-125 transition-transform">✨</span>
+<span class="text-xl cursor-pointer hover:scale-125 transition-transform">💯</span>
+<div class="w-px h-6 bg-white/10 mx-1"></div>
+<button class="bg-primary-container text-on-primary-container rounded-full w-8 h-8 flex items-center justify-center active:scale-90 transition-transform shadow-[0_0_10px_rgba(255,215,0,0.4)]">
+<span class="material-symbols-outlined !text-sm" data-icon="add">add</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-zinc-950/90 backdrop-blur-xl rounded-t-2xl border-t border-white/5 shadow-[0_-4px_20px_rgba(255,215,0,0.1)]">
+<button class="flex flex-col items-center justify-center text-yellow-400 bg-yellow-400/10 rounded-xl p-2 scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Add</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="person_2">person_2</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

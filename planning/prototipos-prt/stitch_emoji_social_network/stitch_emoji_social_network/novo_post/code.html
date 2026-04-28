@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#999077",
+                    "on-surface": "#e5e2e3",
+                    "surface-dim": "#131314",
+                    "surface-variant": "#353436",
+                    "surface-container": "#1f1f20",
+                    "tertiary-fixed-dim": "#dbc90a",
+                    "tertiary-container": "#f0dc2a",
+                    "on-primary": "#3a3000",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-primary-fixed": "#221b00",
+                    "primary-fixed": "#ffe16d",
+                    "surface-bright": "#39393a",
+                    "on-secondary": "#2f3131",
+                    "surface-container-high": "#2a2a2b",
+                    "on-tertiary-container": "#6a6000",
+                    "secondary-fixed": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#4f4800",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4732",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "tertiary-fixed": "#f9e534",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary": "#363100",
+                    "inverse-surface": "#e5e2e3",
+                    "inverse-primary": "#705d00",
+                    "background": "#131314",
+                    "tertiary": "#fff7cf",
+                    "surface-container-low": "#1b1b1c",
+                    "on-error": "#690005",
+                    "surface-container-highest": "#353436",
+                    "on-tertiary-fixed": "#201c00",
+                    "inverse-on-surface": "#303031",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-tint": "#e9c400",
+                    "on-background": "#e5e2e3",
+                    "primary-fixed-dim": "#e9c400",
+                    "surface": "#131314",
+                    "on-primary-container": "#705e00",
+                    "on-secondary-fixed-variant": "#454747",
+                    "secondary-container": "#454747",
+                    "primary": "#fff6df",
+                    "surface-container-lowest": "#0e0e0f",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary-fixed-variant": "#544600",
+                    "primary-container": "#ffd700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "margin": "20px",
+                    "xxl": "48px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Spline Sans"],
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Spline Sans"],
+                    "headline-lg": ["Spline Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .emoji-glow {
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-zinc-950/80 backdrop-blur-md border-b border-white/10 shadow-lg shadow-yellow-400/5">
+<div class="flex items-center gap-4">
+<button class="text-zinc-400 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="text-on-surface font-headline-md font-['Spline_Sans'] font-bold tracking-tight">New Post</h1>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-label-lg font-bold shadow-[0_0_15px_rgba(255,215,0,0.3)] active:scale-95 transition-all">
+            Post
+        </button>
+</header>
+<main class="max-w-2xl mx-auto px-margin pt-lg space-y-lg">
+<!-- Emoji Preview Area -->
+<section class="relative aspect-square w-full max-w-md mx-auto rounded-3xl bg-surface-container-high border border-white/10 flex items-center justify-center overflow-hidden group shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-transparent pointer-events-none"></div>
+<!-- Default Empty State -->
+<div class="text-center space-y-md">
+<div class="w-24 h-24 mx-auto rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-4xl text-outline" data-icon="add_reaction">add_reaction</span>
+</div>
+<p class="font-label-lg text-on-surface-variant">Tap below to pick your Mojo</p>
+</div>
+<!-- Conditional Image Preview (Placeholder) -->
+<!-- <img src="image-placeholder.jpg" data-alt="high-detail 3D rendered energetic emoji with glowing neon yellow accents on a dark charcoal professional background" class="hidden absolute inset-0 w-full h-full object-cover"> -->
+</section>
+<!-- Selector Row -->
+<div class="flex flex-col items-center gap-md">
+<button class="flex items-center gap-sm bg-surface-container-highest hover:bg-white/10 border border-outline-variant px-lg py-md rounded-2xl transition-all group">
+<span class="material-symbols-outlined text-primary-container group-hover:scale-110 transition-transform" data-icon="mood" style="font-variation-settings: 'FILL' 1;">mood</span>
+<span class="font-label-lg text-on-surface">Add Emoji</span>
+</button>
+<div class="flex gap-sm overflow-x-auto w-full pb-xs justify-center no-scrollbar">
+<div class="flex-none w-12 h-12 rounded-xl bg-surface-container border border-white/5 flex items-center justify-center text-2xl cursor-pointer hover:border-yellow-400/50 transition-colors">🔥</div>
+<div class="flex-none w-12 h-12 rounded-xl bg-surface-container border border-white/5 flex items-center justify-center text-2xl cursor-pointer hover:border-yellow-400/50 transition-colors">⚡</div>
+<div class="flex-none w-12 h-12 rounded-xl bg-surface-container border border-white/5 flex items-center justify-center text-2xl cursor-pointer hover:border-yellow-400/50 transition-colors">✨</div>
+<div class="flex-none w-12 h-12 rounded-xl bg-surface-container border border-white/5 flex items-center justify-center text-2xl cursor-pointer hover:border-yellow-400/50 transition-colors">🚀</div>
+<div class="flex-none w-12 h-12 rounded-xl bg-surface-container border border-white/5 flex items-center justify-center text-2xl cursor-pointer hover:border-yellow-400/50 transition-colors">🌈</div>
+</div>
+</div>
+<!-- Content Area -->
+<section class="space-y-sm">
+<div class="relative rounded-2xl bg-surface-container-low border border-outline-variant p-md focus-within:border-primary-container transition-colors shadow-inner">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface font-body-lg min-h-[160px] resize-none placeholder:text-zinc-600" maxlength="500" placeholder="What's happening?"></textarea>
+<div class="absolute bottom-md right-md flex items-center gap-xs">
+<span class="font-label-sm text-outline-variant tracking-wider">0/500</span>
+</div>
+</div>
+<!-- Quick Tag Bar -->
+<div class="flex gap-xs pt-xs">
+<span class="px-md py-xs rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-sm">#mood</span>
+<span class="px-md py-xs rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-sm">#daily</span>
+<span class="px-md py-xs rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-sm">#vibes</span>
+</div>
+</section>
+<!-- Advanced Options -->
+<section class="space-y-md pt-md">
+<div class="flex items-center justify-between p-md rounded-2xl bg-surface-container border border-white/5">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-zinc-400" data-icon="location_on">location_on</span>
+<span class="font-label-lg text-on-surface">Add Location</span>
+</div>
+<span class="material-symbols-outlined text-zinc-600" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-md rounded-2xl bg-surface-container border border-white/5">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-zinc-400" data-icon="group">group</span>
+<span class="font-label-lg text-on-surface">Who can see this?</span>
+</div>
+<div class="flex items-center gap-xs text-primary-container font-label-sm uppercase tracking-widest">
+<span>Public</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-zinc-950/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(255,215,0,0.1)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-400 bg-yellow-400/10 rounded-xl p-2 scale-105 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="add_box" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 p-2 hover:bg-white/5 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person_2">person_2</span>
+<span class="font-['Spline_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

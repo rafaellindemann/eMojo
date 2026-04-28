@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-auto-rows: 10px;
+        }
+        .masonry-item {
+            grid-row-end: span 22;
+        }
+        .masonry-item-tall {
+            grid-row-end: span 32;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131314",
+                        "on-tertiary-fixed-variant": "#4f4800",
+                        "on-tertiary-container": "#6a6000",
+                        "inverse-primary": "#705d00",
+                        "outline-variant": "#4d4732",
+                        "tertiary": "#fff7cf",
+                        "on-primary-fixed": "#221b00",
+                        "error-container": "#93000a",
+                        "surface-tint": "#e9c400",
+                        "secondary-container": "#454747",
+                        "outline": "#999077",
+                        "primary": "#fff6df",
+                        "on-secondary": "#2f3131",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#d0c6ab",
+                        "tertiary-fixed": "#f9e534",
+                        "on-secondary-fixed-variant": "#454747",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "background": "#131314",
+                        "on-primary-container": "#705e00",
+                        "on-background": "#e5e2e3",
+                        "inverse-surface": "#e5e2e3",
+                        "tertiary-container": "#f0dc2a",
+                        "on-tertiary-fixed": "#201c00",
+                        "surface-container": "#1f1f20",
+                        "on-primary-fixed-variant": "#544600",
+                        "secondary": "#c6c6c7",
+                        "primary-fixed": "#ffe16d",
+                        "tertiary-fixed-dim": "#dbc90a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#363100",
+                        "surface-container-low": "#1b1b1c",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#303031",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "primary-container": "#ffd700",
+                        "on-primary": "#3a3000",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-fixed": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "margin": "20px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Spline Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Spline Sans"],
+                        "display-lg": ["Spline Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-stone-950/80 backdrop-blur-xl font-['Spline_Sans'] tracking-tight border-b border-white/10 shadow-[0_4px_20px_rgba(255,215,0,0.1)] docked full-width top-0 sticky z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-xl">
+<h1 class="text-2xl font-black tracking-tighter text-yellow-400 italic">eMojo</h1>
+<nav class="hidden md:flex items-center space-x-lg h-full">
+<a class="text-yellow-400 border-b-2 border-yellow-400 pb-1 font-label-lg transition-all duration-300 ease-out active:scale-95" href="#">Explore</a>
+<a class="text-stone-400 hover:text-white font-label-lg transition-colors transition-all duration-300 ease-out active:scale-95" href="#">Live</a>
+<a class="text-stone-400 hover:text-white font-label-lg transition-colors transition-all duration-300 ease-out active:scale-95" href="#">Shop</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-stone-400 p-sm hover:bg-white/5 hover:text-yellow-300 rounded-full transition-all duration-300 ease-out active:scale-95">notifications</button>
+<button class="material-symbols-outlined text-stone-400 p-sm hover:bg-white/5 hover:text-yellow-300 rounded-full transition-all duration-300 ease-out active:scale-95">chat_bubble</button>
+<button class="material-symbols-outlined text-stone-400 p-sm hover:bg-white/5 hover:text-yellow-300 rounded-full transition-all duration-300 ease-out active:scale-95">settings</button>
+</div>
+<img alt="User profile" class="w-10 h-10 rounded-full border border-yellow-400/50 shadow-[0_0_10px_rgba(255,215,0,0.3)]" data-alt="Close-up portrait of a stylish person with neon rim lighting against a dark textured studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASEetj5Ac5usZOKz4Ov1fQbg3lbfgDwIuMjjrlYzitbRVlkpAuUOnopoFZi46OOtMGci13IDga2A4gES8eqt-Qal4nBhuZ6-wF2JJMSpxDR6WQP4-El8Hvj9sTD7Q4TBgTjHRryEJGg7pKdQZDTXaM9oRQZW7L_ZBRsd1SrG7O2YdaSin0dWGluSALeB3kpSU0B6OUKG8vkscl3dZpxfMwVfMiXPRIWWM0yg7LpuVE_fHgqTNSdoplTQQ0vKcGaNeTmMAQcws2jIw"/>
+</div>
+</header>
+<div class="flex max-w-[1600px] mx-auto min-h-[calc(100vh-64px)]">
+<!-- Sidebar Navigation -->
+<aside class="bg-stone-950 font-['Spline_Sans'] font-medium h-screen w-64 sticky left-0 top-16 border-r border-white/10 shadow-2xl hidden lg:flex flex-col py-8 px-4 space-y-6">
+<div class="space-y-sm">
+<a class="flex items-center gap-md p-md text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg">Home</span>
+</a>
+<a class="flex items-center gap-md p-md text-yellow-400 font-bold border-r-4 border-yellow-400 bg-yellow-400/5 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-lg">Trending</span>
+</a>
+<a class="flex items-center gap-md p-md text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-lg">Circles</span>
+</a>
+<a class="flex items-center gap-md p-md text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-lg">Messages</span>
+</a>
+<a class="flex items-center gap-md p-md text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-lg">Bookmarks</span>
+</a>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-md rounded-xl font-headline-md shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.4)] transition-all duration-300">
+                Post Emoji
+            </button>
+<div class="pt-xxl mt-auto">
+<div class="glass-card p-md rounded-xl space-y-xs">
+<p class="text-stone-500 text-label-sm">Top Circle</p>
+<p class="font-label-lg text-yellow-400">#RetroGaming</p>
+<div class="flex -space-x-2 pt-xs">
+<img class="w-6 h-6 rounded-full border border-stone-900" data-alt="Portrait of a young man with cool lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_5hnaBQQrKnMiorNXKvyF0MuZ9TYAxrROEqGhoZ-OyA2tGRDY6su0t7FjkpsPF1uy_Lpag7hW9_r61p778uA6oN0om6Y8EX8yzEe5pxmxh7lvFLayXPF8O8qjkEXB7IUs1pRmzvQCKJwak24EaIh_7wXwuUw8t9-lFxTUEjP8K-TCPHhK36YycqQKHqQg1XJKb_Lib790EPUepCGlb3cvVOHoqUx3l78RXIqrW3M2_0aw2kIzQKgQj48R8EgA3H6PFaQnvDDSxg"/>
+<img class="w-6 h-6 rounded-full border border-stone-900" data-alt="Portrait of a smiling woman in warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9reEpx4R_HDB7UaUND85BvCMJyut28UVAUb7U3lXHRXcPklj7fZgRckP40J3CEK0PylXJPoPqGQ3Uz-0mBYgQW2PVSqRHErNLtJ_2XOBqS4NCzEdO64PU6RHOX2qkweeVnXI1HQbR9FhcYyrvAjTSShCrNnlqWQ9qVIMbHnWRZHtPPlb2CKZPJ6Z-DPLdLlnyrs3kTJcVUt1bDlu-3h6tTrpMZMYPQMjlvFkPRSXipTddEldFZHtI3-QFXvS4NY5sWDUKjVq3BqQ"/>
+<div class="w-6 h-6 rounded-full bg-stone-800 border border-stone-900 flex items-center justify-center text-[10px]">+12k</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-lg md:px-xxl py-xl space-y-xxl bg-surface-dim">
+<!-- Search Section -->
+<section class="max-w-3xl mx-auto w-full">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-yellow-400/30 to-yellow-600/30 rounded-2xl blur opacity-25 group-focus-within:opacity-75 transition duration-500"></div>
+<div class="relative bg-surface-container-high rounded-xl flex items-center px-lg py-md border border-white/5 shadow-xl">
+<span class="material-symbols-outlined text-yellow-400 mr-md">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-lg w-full text-on-surface placeholder-stone-500" placeholder="Explore emojis, circles, and creators..." type="text"/>
+<div class="flex items-center gap-sm">
+<kbd class="px-sm py-xs bg-stone-800 rounded text-label-sm text-stone-400">CMD</kbd>
+<kbd class="px-sm py-xs bg-stone-800 rounded text-label-sm text-stone-400">K</kbd>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Creators Grid -->
+<section class="space-y-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-lg text-primary">Featured Creators</h2>
+<a class="text-yellow-400 text-label-lg hover:underline flex items-center gap-xs" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-lg">
+<!-- Creator Card 1 -->
+<div class="glass-card p-lg rounded-xl group hover:border-yellow-400/50 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-col items-center text-center space-y-md">
+<div class="relative">
+<div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-yellow-400 to-transparent">
+<img alt="Creator" class="w-full h-full rounded-full object-cover" data-alt="Close-up of a fashionable woman with colorful graphic eye makeup and neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxV_bXlYdhiCK5RovnRRoZt-fGcAk0lCDmZYinHD-3mOBvHpH00LlwoVVB8AM65UE2b587JrS-7dXSHFFwNwG3MwUA-QaBvTQg7O_CzHpWNtVLm8BsXIeXe9mZYQDs31U2SxYnJS7ovoRM192LzHDe698xULLcJaAV3kkKj7x_SOSaMVIRumgdFZLFOfb3OH6M3RNZodyicV6CAiLfU8pTA6mT9KFHEsvQg-K1RC5ZIey0fxloEGWsgI8Ld2OxmitetbOGAsWh5H8"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container p-1 rounded-full text-lg">✨</div>
+</div>
+<div>
+<p class="font-headline-md text-on-surface">LunaRay</p>
+<p class="text-label-sm text-stone-500">@lunar_emoji_art</p>
+</div>
+<button class="w-full py-sm bg-white/5 hover:bg-yellow-400 hover:text-stone-950 border border-white/10 rounded-lg text-label-lg transition-all duration-300">Follow</button>
+</div>
+</div>
+<!-- Creator Card 2 -->
+<div class="glass-card p-lg rounded-xl group hover:border-yellow-400/50 transition-all duration-300 relative overflow-hidden">
+<div class="flex flex-col items-center text-center space-y-md">
+<div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-yellow-400 to-transparent">
+<img alt="Creator" class="w-full h-full rounded-full object-cover" data-alt="Portrait of a man with a sharp jawline under moody teal and yellow lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9z6IFPSaodOn3ocGym0QCdQvmPMr-p9WdhwhswkeUOxYec3t737oUUSfCDmfIf7lRMAgP2bIYsCl-fnJrk1E-mdWhLAlUMLc3qqjPA--LIsIDzCQclnL9cYpykpmFM1V7AuwUUoFZVguQ_VPWF7M_RunFxkxJWlSKKR2Nxd-ZZWtzWSPSCg4ybDeTTNBFeWsIFVtyhr6H9x9P0_zULvKHSOIXZr22wz6V7xIa2QM0vSEOfB0lRV7DDLIV7rFmsNdnIFUxjbJ-7s"/>
+</div>
+<div>
+<p class="font-headline-md text-on-surface">NeonPixel</p>
+<p class="text-label-sm text-stone-500">@pixel_master_88</p>
+</div>
+<button class="w-full py-sm bg-white/5 hover:bg-yellow-400 hover:text-stone-950 border border-white/10 rounded-lg text-label-lg transition-all duration-300">Follow</button>
+</div>
+</div>
+<!-- Creator Card 3 -->
+<div class="glass-card p-lg rounded-xl group hover:border-yellow-400/50 transition-all duration-300 relative overflow-hidden">
+<div class="flex flex-col items-center text-center space-y-md">
+<div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-yellow-400 to-transparent">
+<img alt="Creator" class="w-full h-full rounded-full object-cover" data-alt="Close up of a person with expressive features and warm amber backlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq8nktFQJb2ownKgK3gTx2LS-kvGfnNXtkj47mnBosZPjcz_RP21o3eSS1_t_gy9T3ki_6SR6zqaPu5FKEE8RdKpzUvHzhKdJUTkDqYaCvMmkaZsv_4SodGs39G7ze3Wy5ap2lQdKW7nitoiW98XabqHrTAHPUlADXZ-COC2lYOTN0GaRBE7OzJeacRFLaDxpvw1nBkQ6MoFvB4Oy9Gpwbd06fix9lrX4siqnvMxSvEUcv4zN3cWgWKcMd-_wYtur1Iz6K6BZQWLs"/>
+</div>
+<div>
+<p class="font-headline-md text-on-surface">VibeShift</p>
+<p class="text-label-sm text-stone-500">@vibeshift_daily</p>
+</div>
+<button class="w-full py-sm bg-white/5 hover:bg-yellow-400 hover:text-stone-950 border border-white/10 rounded-lg text-label-lg transition-all duration-300">Follow</button>
+</div>
+</div>
+<!-- Creator Card 4 -->
+<div class="glass-card p-lg rounded-xl group hover:border-yellow-400/50 transition-all duration-300 relative overflow-hidden">
+<div class="flex flex-col items-center text-center space-y-md">
+<div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-yellow-400 to-transparent">
+<img alt="Creator" class="w-full h-full rounded-full object-cover" data-alt="Portrait of a young woman with a creative haircut in high-contrast dark aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEO7O5aY209y-2Ai1SF6fljiuGo2hHn37WSK5W2_Cz6MjUti47qinga0cy4A9XBYnFS6uHocC7bK4klevxLCIz_8D5rFdHioCQJWLHarIrHJV2P1foNCS7uOx-ungtiEWHnsnRt7OtK1iKPYHb-bAqFqv-XGlBjcOXzEI04e86H-A4sA13rpI7pp0FkrlTeJ7Zpe8hUoPRY4fsWECtzWe9WaFQOO3v2QxIkvo3gdt0rDrdpl3LKXyASH8xNwPJQ3yQWvF3tVaSa1k"/>
+</div>
+<div>
+<p class="font-headline-md text-on-surface">Z-Genie</p>
+<p class="text-label-sm text-stone-500">@z_genie_express</p>
+</div>
+<button class="w-full py-sm bg-white/5 hover:bg-yellow-400 hover:text-stone-950 border border-white/10 rounded-lg text-label-lg transition-all duration-300">Follow</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Emojis Masonry -->
+<section class="space-y-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-lg text-primary">Trending Emojis</h2>
+<div class="flex gap-sm">
+<button class="bg-yellow-400 text-stone-950 px-md py-xs rounded-full text-label-sm font-bold">Newest</button>
+<button class="bg-stone-800 text-stone-400 px-md py-xs rounded-full text-label-sm hover:bg-stone-700">Popular</button>
+</div>
+</div>
+<div class="masonry-grid gap-md">
+<!-- Masonry Item 1 -->
+<div class="masonry-item-tall glass-card rounded-xl p-md flex flex-col space-y-md group hover:-translate-y-1 transition-transform">
+<div class="relative flex-1 overflow-hidden rounded-lg bg-stone-900 flex items-center justify-center">
+<span class="text-7xl group-hover:scale-125 transition-transform duration-500">🚀</span>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+<div class="flex gap-sm">
+<button class="p-xs bg-white/10 rounded-full hover:bg-yellow-400 hover:text-stone-950 transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+<button class="p-xs bg-white/10 rounded-full hover:bg-yellow-400 hover:text-stone-950 transition-colors">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</div>
+</div>
+<div class="space-y-xs">
+<p class="text-body-md text-stone-300">Just launched the new UI kit for eMojo. Taking this to the moon! 🚀🔥</p>
+<div class="flex items-center gap-sm pt-xs">
+<img class="w-6 h-6 rounded-full" data-alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPxVm7arl44xltqGrHiDv8zB9ifyvfUgB8E8_1Q7cVCcWlpOJl6phPRMO0Ji036p3DkDlg-Kq3ivvhCWWEiB_SAHYt1K_Nigp6pPjLV06a4QHq_QjUkd_mf4YB1GErsecnzotpy2aGlCaqoqwocvoKwPVsEILS-xv2x1OtOZReH6x29MQ9gCnQGRJzMZe2vRJsyXPmNTPDFCUn6PIkkdGRSvh8fm6yyuw9BWLbfzo8Kx4V2Og0t1NQ2bKJD_zRtinHJouM0cPgB8I"/>
+<span class="text-label-sm text-stone-500">by AlexDesign</span>
+</div>
+</div>
+</div>
+<!-- Masonry Item 2 -->
+<div class="masonry-item glass-card rounded-xl p-md flex flex-col space-y-md group hover:-translate-y-1 transition-transform">
+<div class="relative flex-1 overflow-hidden rounded-lg bg-stone-900 flex items-center justify-center">
+<span class="text-7xl group-hover:scale-125 transition-transform duration-500">🎨</span>
+</div>
+<div class="space-y-xs">
+<p class="text-body-md text-stone-300">Vibrant vibes only today. 🎨✨ #CreativeLife</p>
+<div class="flex items-center gap-sm pt-xs">
+<img class="w-6 h-6 rounded-full" data-alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANgi7DhApdIk7DHrvYjmGAOEGBsq09MFMLIqoseHb6DdI3RC70PXQlmoXXZ20Rsl1dZlshOT8kto1G0imB8Ogem-T_177FRQQ_et_jGklCKT5WRTrzVoDRgZzL6XhwZkKYd-ILVoA9mBn3a41KylFwtvUX0Ols1eKTOgv18AjP_VqgYiyKC28RT6dffL1QUSYd8CvLdWgiTTDLY4NSaNwn-CnNvYOHbJO-BrKYfaQSo9r8TxkbRRWNHqP8Yn6eEIrnJbGUzbfqY4w"/>
+<span class="text-label-sm text-stone-500">by SarahArt</span>
+</div>
+</div>
+</div>
+<!-- Masonry Item 3 -->
+<div class="masonry-item-tall glass-card rounded-xl p-md flex flex-col space-y-md group hover:-translate-y-1 transition-transform">
+<div class="relative flex-1 overflow-hidden rounded-lg bg-stone-900 flex items-center justify-center">
+<span class="text-7xl group-hover:scale-125 transition-transform duration-500">🫠</span>
+</div>
+<div class="space-y-xs">
+<p class="text-body-md text-stone-300">Monday morning mood after a long weekend... help. 🫠🫠🫠</p>
+<div class="flex items-center gap-sm pt-xs">
+<img class="w-6 h-6 rounded-full" data-alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDL_wkMl4GcqjfRDGs3SB8e0KEMWlX5UZFjUQqvNjCskugljbj2bNF-rwvvE86iHtRlVtL-VeSCgALXKRud1_Yt2Am7yVIPcgjjMzrakg_Oa30pidFJt8ZuDTWlnL6Lvn-EtHZDe31w7AVHe8uC4kcnvb3w_sR9NsMcblXM2qoxmaXivEWoSmnmCh5uf1nhEZDnXr3igGvhHVdqcvO5voxHsoAgnLv20S3awsUezo9dfimUHNVfqLalCFM4urmRTgKvk81FNcGaYs"/>
+<span class="text-label-sm text-stone-500">by MikeP</span>
+</div>
+</div>
+</div>
+<!-- Masonry Item 4 -->
+<div class="masonry-item glass-card rounded-xl p-md flex flex-col space-y-md group hover:-translate-y-1 transition-transform">
+<div class="relative flex-1 overflow-hidden rounded-lg bg-stone-900 flex items-center justify-center">
+<span class="text-7xl group-hover:scale-125 transition-transform duration-500">⚡️</span>
+</div>
+<div class="space-y-xs">
+<p class="text-body-md text-stone-300">Energy is electric tonight! ⚡️⚡️⚡️</p>
+<div class="flex items-center gap-sm pt-xs">
+<img class="w-6 h-6 rounded-full" data-alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0gJ0aoPfGQc4xQ2mut_3WAFvFDX16Y47kE4RRbEhYI4c-2LEbRjPjd-HRopjYIS2BTm_FcNGf7jFRIfF3E5jbvEJWpVEAXI7pP2SMAa1OBDKrYTSJBox4vRVRZ_119jsEr1l9sBECuqaxHd80yEiEAO2iFze_jZ2mPyNMrxkZAiR4VUxpfqXQXoLgy4bQS_PVnOBsbNPCYegv2XPxRbNmVAkUA8yfTihYqZwFEiAXKh5qv4HIJ_cZOaVMleYuQBpSWwDQItKf3AA"/>
+<span class="text-label-sm text-stone-500">by ElectricSoul</span>
+</div>
+</div>
+</div>
+<!-- Masonry Item 5 -->
+<div class="masonry-item-tall glass-card rounded-xl p-md flex flex-col space-y-md group hover:-translate-y-1 transition-transform">
+<div class="relative flex-1 overflow-hidden rounded-lg bg-stone-900 flex items-center justify-center">
+<span class="text-7xl group-hover:scale-125 transition-transform duration-500">👾</span>
+</div>
+<div class="space-y-xs">
+<p class="text-body-md text-stone-300">New high score! Retro gaming night was a huge success. 👾🎮🏆</p>
+<div class="flex items-center gap-sm pt-xs">
+<img class="w-6 h-6 rounded-full" data-alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj_6U7gnzzM5Kd1bVbX2m0tnJx8HrtUuDz8PqrvnIhcgW2rfeICrCGYknlUXIz7UCFaGNMef3Q3AV2E4mlDvvuXC4_DE-TqhWpxbkM4IXz4YbD-pbxy4Pmg0mpOwuyimKsjKKNsVl3jybWBOMkTRjYimACX-GtApScj56nzgLlM3120ELVSMhE40FIKd9Bav8_KDv-vL2xW3kGAFComA8fpUYa9R9t5tUvG-1QP5zUjbSKqE8U8uXClJ4SLi3G-FDeYI_rQf5dBtw"/>
+<span class="text-label-sm text-stone-500">by GamerGirlZ</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Right Sidebar (Extra Info) -->
+<aside class="w-80 h-screen sticky top-16 p-xl space-y-xxl hidden xl:block">
+<section class="space-y-lg">
+<h3 class="font-headline-md text-primary">Live Now</h3>
+<div class="space-y-md">
+<div class="flex items-center gap-md p-md glass-card rounded-xl hover:bg-white/10 transition-colors cursor-pointer">
+<div class="relative">
+<img class="w-12 h-12 rounded-lg" data-alt="Live streaming thumbnail with colorful overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQesyy2mtr1WlgKpYYPMgZr8EQVFR8LbP11Tn7PaCgEIOojBf4lrlletNULiVP8qJaxYEKhhjrbcQJ0Cx_FGP5_FcwG6dJIYgpiONSk1yFuHT2eRNndf1-bB75ouSSJTRj-UQilfdqJTwsji9YyN_-HnK9uK5Jnar93Z7deX6mDJ-KzflXS2A-mzPk0jJMErfc_q95-tQqP5CWUjup7vR4N5ZZfmTlScwcDjzv9UwrsbdMYC79P6tt2ADBEgspKLKaSUq1jr6FsGs"/>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+</span>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-lg truncate text-on-surface">Neon Art Battle</p>
+<p class="text-label-sm text-stone-500">4.2k watching</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md glass-card rounded-xl hover:bg-white/10 transition-colors cursor-pointer">
+<div class="relative">
+<img class="w-12 h-12 rounded-lg" data-alt="Podcast microphone in a dimly lit studio with yellow accent lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnpaFAiVskn1QfHx8uTYtMsurmjlROpb5auWDsutZ1_t3CxQ17POkiBHVYOrP0tyFq_1va2fAK1-Rmq5oT76uRMUZtsmMwOcqy77T6Z21YL34_rYJPT_Tl_S7t4SUyoRV_zbWJXTagiLTAt6agOxpJCKqqBglHJYvPC_oMg4u9FxvSImcDKLLzxfF7KAA3vioumcQ3AsM74RxxjjB5k8c003he9CQpzkN_szIYxq1Frz0YkEFvaCCs92GYPDLQOcNrBw2CSJIJg_I"/>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+</span>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-lg truncate text-on-surface">Emoji Podcast #22</p>
+<p class="text-label-sm text-stone-500">1.8k watching</p>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-lg">
+<h3 class="font-headline-md text-primary">Marketplace Drops</h3>
+<div class="bg-gradient-to-br from-stone-800 to-stone-900 rounded-2xl overflow-hidden border border-yellow-400/20">
+<img alt="NFT Drop" class="w-full h-40 object-cover" data-alt="Abstract 3D render of floating metallic spheres with iridescent textures and yellow light glows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1zVXkhG_e9ZrQjNFhTbYvkb7rK-nRfnOYvsj8UDLI6SnYhHgxV6tKcMOzyx0FsgNywN11rq6Aef_YbQSqQzdOk8wlHim8-MKG4l3qj7K-KCrxUOmYo-F_CZNfLmNDclBadBTe_CXToSm3uKNmPXahw-O4k87331CVJS9kgbdnPQ5El43yW_WWJWi0EjeZBfUuw4ZUeX2NDkDOp-H9EnRIj6xeBO4IB-GBJb6jxLPwcxP9kA-D0B-6uBA7RS-vnIyUeWXDnd32k4k"/>
+<div class="p-lg space-y-md">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-headline-md text-yellow-400">Golden Ether</p>
+<p class="text-label-sm text-stone-400">Exclusive Emoji Set</p>
+</div>
+<span class="bg-stone-950 px-sm py-xs rounded text-label-sm font-bold border border-yellow-400">0.45 ETH</span>
+</div>
+<button class="w-full py-md bg-yellow-400 text-stone-950 font-bold rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.3)] hover:scale-105 transition-transform">Buy Now</button>
+</div>
+</div>
+</section>
+<footer class="pt-xxl space-y-md">
+<div class="flex flex-wrap gap-md">
+<a class="text-label-sm text-stone-600 hover:text-stone-400" href="#">Privacy</a>
+<a class="text-label-sm text-stone-600 hover:text-stone-400" href="#">Terms</a>
+<a class="text-label-sm text-stone-600 hover:text-stone-400" href="#">Ad Info</a>
+<a class="text-label-sm text-stone-600 hover:text-stone-400" href="#">Cookies</a>
+</div>
+<p class="text-label-sm text-stone-700">© 2024 eMojo Inc.</p>
+</footer>
+</aside>
+</div>
+<!-- Contextual FAB for Top-Level Explore -->
+<button class="fixed bottom-xxl right-xxl w-14 h-14 bg-yellow-400 text-stone-950 rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(255,215,0,0.4)] hover:scale-110 active:scale-95 transition-all duration-300 z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

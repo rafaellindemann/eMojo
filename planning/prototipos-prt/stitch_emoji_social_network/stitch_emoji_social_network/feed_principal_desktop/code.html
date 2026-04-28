@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>eMojo | Vibrant Social</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#131314",
+                    "on-tertiary-fixed-variant": "#4f4800",
+                    "on-tertiary-container": "#6a6000",
+                    "inverse-primary": "#705d00",
+                    "outline-variant": "#4d4732",
+                    "tertiary": "#fff7cf",
+                    "on-primary-fixed": "#221b00",
+                    "error-container": "#93000a",
+                    "surface-tint": "#e9c400",
+                    "secondary-container": "#454747",
+                    "outline": "#999077",
+                    "primary": "#fff6df",
+                    "on-secondary": "#2f3131",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-surface-variant": "#d0c6ab",
+                    "tertiary-fixed": "#f9e534",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-container-highest": "#353436",
+                    "on-error": "#690005",
+                    "background": "#131314",
+                    "on-primary-container": "#705e00",
+                    "on-background": "#e5e2e3",
+                    "inverse-surface": "#e5e2e3",
+                    "tertiary-container": "#f0dc2a",
+                    "on-tertiary-fixed": "#201c00",
+                    "surface-container": "#1f1f20",
+                    "on-primary-fixed-variant": "#544600",
+                    "secondary": "#c6c6c7",
+                    "primary-fixed": "#ffe16d",
+                    "tertiary-fixed-dim": "#dbc90a",
+                    "surface-container-lowest": "#0e0e0f",
+                    "surface-dim": "#131314",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-tertiary": "#363100",
+                    "surface-container-low": "#1b1b1c",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#303031",
+                    "surface-container-high": "#2a2a2b",
+                    "on-surface": "#e5e2e3",
+                    "surface-bright": "#39393a",
+                    "primary-container": "#ffd700",
+                    "on-primary": "#3a3000",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#353436",
+                    "secondary-fixed": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "xxl": "48px",
+                    "md": "16px",
+                    "margin": "20px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "xl": "32px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Spline Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Spline Sans"],
+                    "display-lg": ["Spline Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(53, 52, 54, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Left SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col py-8 px-4 space-y-6 h-screen w-64 fixed left-0 top-0 border-r border-white/10 bg-stone-950 shadow-2xl z-40 font-['Spline_Sans'] font-medium">
+<div class="flex items-center gap-3 px-2 mb-4">
+<img alt="eMojo Logo" class="w-10 h-10 object-contain" data-alt="vibrant abstract emoji style logo with glowing yellow accents on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNmyk2Fmo3wCIcZLSml24MfCyx1vvXO1lGy-fF1zaOIVjWtMWnYfHuExVGLOBB0SyrVfMBHvEQTzYfiF-_RENvuGYBm-x6Lge6Lil2KM_TerF4b05430DoLx9J09B2EoKH7zpRui4ikRqDF84040Tvtr_SERWrZSeWbWLtoWFa6-Dc84lGmNnvtjYihfUFB09vt3whRBVxYZa0B3FjeE3BLDfDe6FS64KRBR66gPYAX2gdeGBegnyG-c8KHnRhj-dfGVPYOV_XZE"/>
+<div>
+<h1 class="text-xl font-black text-yellow-400">eMojo</h1>
+<p class="text-[10px] text-stone-500 uppercase tracking-widest font-bold">Vibrant Social</p>
+</div>
+</div>
+<nav class="flex flex-col space-y-2">
+<!-- Active: Home -->
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-yellow-400 font-bold border-r-4 border-yellow-400 bg-yellow-400/5 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-lg">Home</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="text-label-lg">Trending</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-lg">Circles</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="text-label-lg">Messages</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-stone-500 hover:text-stone-200 hover:bg-white/5 transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-label-lg">Bookmarks</span>
+</a>
+</nav>
+<div class="mt-auto pt-6">
+<button class="w-full bg-primary-container text-on-primary py-4 rounded-full font-bold text-label-lg shadow-[0_4px_20px_rgba(255,215,0,0.2)] hover:scale-[1.02] active:scale-95 transition-all duration-200">
+                Post Emoji
+            </button>
+</div>
+</aside>
+<!-- Main Layout Container -->
+<div class="md:ml-64 flex min-h-screen">
+<!-- Center Column: Feed -->
+<main class="flex-1 max-w-2xl border-r border-white/10 pb-20">
+<!-- Top App Bar (Shared Component Strategy) -->
+<header class="flex justify-between items-center px-6 h-16 w-full bg-stone-950/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-30 font-['Spline_Sans'] tracking-tight">
+<h2 class="font-headline-md text-on-surface">Home</h2>
+<div class="flex items-center gap-4">
+<button class="text-stone-400 hover:text-yellow-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-stone-400 hover:text-yellow-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-yellow-400/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyzWfTR6vw-IsqxGQCue2iykWEaf5Od8CNjT4_3kL2YT8sRum-AzARKzxCwGSS0Zmillp3-to9maM5XKcdYrrpwJLBRSSNrVJcpxXhMWE6dTIUSVhkMVnA_EkeQ1yKcc-YBmw92QYCUg70dZcAOUxxTRHNteWR01Ka_JM7ochay6pojaoGFAOTTDqKg8A0C-iq07625QUGfu9pQlX6YGHO_MEY4L-rwxocUEa2sdzD6h26-Ind4Y_onnUqlY99PSqFRYOi7FoICAg"/>
+</div>
+</header>
+<!-- Stories/Rapid Reaction Bar -->
+<div class="p-6 overflow-x-auto flex gap-4 no-scrollbar border-b border-white/5">
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-yellow-400/10 border-2 border-dashed border-yellow-400/50 flex items-center justify-center text-yellow-400">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="text-[10px] font-bold text-stone-400">Your Story</span>
+</div>
+<!-- Repeat Story items -->
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl p-0.5 bg-gradient-to-tr from-yellow-400 to-orange-500">
+<img alt="Friend" class="w-full h-full rounded-[14px] bg-stone-900 border-2 border-stone-900" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh7a_-Ny0qvQgufGKSqgJVBIKEiRKM1mVJ6KAMWTMJ5o_R_8IKpPwizxzFXLrrhosd7uofAA_jIhXdzzqQyqLUZJwG8lccp1vpsGE3za415V4pW590Ko7MyrnNxt_h_Gq01WMyAkrtL2ehlEtqMxnPu_QKNlj2mdpRDPHiGFF7zqjg3oX4X22z2U36mc6rH918wKy8NUCtwJMo8an_0Y6uqJtiVqTCZ6Q6oy0Z8N7EbKFfAb2Fmztc-pp-FsrOndvtdWQy0DFvRYw"/>
+</div>
+<span class="text-[10px] font-bold text-stone-200">Felix</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl p-0.5 bg-gradient-to-tr from-yellow-400 to-orange-500">
+<img alt="Friend" class="w-full h-full rounded-[14px] bg-stone-900 border-2 border-stone-900" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP5Ab6JcCrCrTR3sQ6i-C6fNiSNch1-W533x8EmEX_WTsm6ZueAGj9GZRrxsaebieCNH-gpv24TiDTAF0q5KzdVeRz044zaCoR2PyluJZ0ZQQy8zeeeqiZ8t1OZznPcimb76yRVlzdVxYY0t8csenLuqJhDOflmSivpfZ_YYYy_ivyUIRHdJTmJVIqNNnwCfntceSxLFJzJO9pRTvDLZ26P9Tj1tgfLsvabWQ1UpKY9qwGsYPaXs3qM88lzDFPi5fSM2hTk2PYLBs"/>
+</div>
+<span class="text-[10px] font-bold text-stone-200">Sarah</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl p-0.5 bg-gradient-to-tr from-yellow-400 to-orange-500">
+<img alt="Friend" class="w-full h-full rounded-[14px] bg-stone-900 border-2 border-stone-900" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4twBe8-hQfCeBJI2gsdvTtwd4qh6B0MJsQXJVsojYq6E2d9tmbjJJqAnvFfsTAh2gEntpFxl7uSkuAA_tIcFTnmY-sCpzyANcwIslqb1Jvhti0vX28Q6DHB2d32T_pnkfoKMTecPnLiMgafWIGIgUXRnEGvq10dgCHG_qWNZGm_ny6HadLrKOV_kUKFb_qmsrp4NWgCWwKxf6hA6sx3sUXCqV30XLe3ZKeIN1xYQblZO6zrCByCJtiUqF_SqcWSzbHf31SxnCGuA"/>
+</div>
+<span class="text-[10px] font-bold text-stone-200">Mojo</span>
+</div>
+</div>
+<!-- Feed Content -->
+<div class="divide-y divide-white/5">
+<!-- Feed Post 1 -->
+<article class="p-6 group">
+<div class="flex gap-4 mb-4">
+<img alt="Creator" class="w-12 h-12 rounded-xl bg-stone-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoVM2NMiU1MXZ83S7kNhVOM-n1-8ccNxnxkUyQBAltDgrSRtCL9_8dvEpDIbv-6AX3ZkBjT-Qz80chW0wDVXjkuZ1SHcDqWSUqZozz9gERJpf0Z9C5_2BihnUDuOb3dPiKyFRj1uMzbPgAhUine7gdbygRY8iEOyHXU2JUJ_bdIGwaNPBiiQSsI8PwAZkMoD9TjDN_YgxwMeIL5zB3ZLadkVICu0cPTplGbtY5Ykd7AL8xIGsOIQJabgvry54DMYorbquGwsNuXHY"/>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-on-surface">NeonPulse</h3>
+<span class="material-symbols-outlined text-[16px] text-yellow-400" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-stone-500 text-label-sm">@pulse_emoji • 2h</p>
+</div>
+<button class="ml-auto text-stone-500">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Main Emoji Frame -->
+<div class="aspect-square w-full rounded-3xl overflow-hidden relative glass-card shadow-2xl mb-4 group-hover:scale-[1.01] transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="abstract 3d vibrant neon yellow and dark charcoal fluid shape, glowing core, high contrast futuristic design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_DJthhJpRrGg7BJU6mewMa6ooVvssfxNJ-XE5qIQffT-hSkpW3oMPtvLmFvy20oyQDzRAuUUd6yE1hbzcdCd31d3EhDxOfar_5Yj9oJ2_0RSXqP45Er7pmU31Wi08vYHVlyJMDeS8Ne9MOXqz7ohpcCHGoxwgyqKKzSs0VvvyMOmc3qoHAN_QOWor_0HrwqbI1pby0n6WsoJGjEU4WFZd_Gre4_g67ec1okx0kLgGM4dTSh-F4PZtZqhvHe8J0nvgM90wa0KN2OI"/>
+<!-- Floating Micro-Emoji -->
+<div class="absolute bottom-4 right-4 z-20 flex gap-2">
+<div class="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-2">
+<span class="text-xl">🔥</span>
+<span class="text-xs font-bold text-yellow-400">4.2k</span>
+</div>
+</div>
+</div>
+<div class="space-y-3 px-1">
+<p class="text-body-md text-stone-300 leading-relaxed">
+                            Feeling that electric Friday energy! ⚡️ Just dropped this new kinetic neon variant in the shop. Thoughts?
+                        </p>
+<div class="flex items-center gap-6 pt-2">
+<button class="flex items-center gap-2 text-stone-500 hover:text-yellow-400 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="text-label-sm">1.8k</span>
+</button>
+<button class="flex items-center gap-2 text-stone-500 hover:text-blue-400 transition-colors">
+<span class="material-symbols-outlined text-xl">comment</span>
+<span class="text-label-sm">124</span>
+</button>
+<button class="flex items-center gap-2 text-stone-500 hover:text-green-400 transition-colors">
+<span class="material-symbols-outlined text-xl">rebase_edit</span>
+<span class="text-label-sm">45</span>
+</button>
+<button class="ml-auto text-stone-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Feed Post 2 -->
+<article class="p-6 group">
+<div class="flex gap-4 mb-4">
+<img alt="Creator" class="w-12 h-12 rounded-xl bg-stone-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4cgyndT5n5NR9rMfYof0mZahAARf86LOe-WZXt-sNAF9uP2dgfhjQrXwv0NzIZM5fRjbs6rDX0vIQu8x6tmtbe7p48Y8EIVeoezYby_mgaVV4-eNsZD4BrPgpkAqIVQheMfuA_tCJVQIOV2dEgpzmJYR2XAAEZi4l6-vwz7DPe6eKiOtVjq75IIaoUTACL3RnGq18fI4ChoT5cDbcm2fcjNz9Ol0Vwjx2brkwN4OJIpTRNplo3J5XNIGVQF1Pm3xSuq-FuDaMJ6g"/>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-on-surface">DigitalZen</h3>
+<span class="text-stone-500 text-label-sm">@zen_master • 5h</span>
+</div>
+</div>
+<button class="ml-auto text-stone-500">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Main Emoji Frame -->
+<div class="aspect-square w-full rounded-3xl overflow-hidden relative glass-card shadow-2xl mb-4 group-hover:scale-[1.01] transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="abstract glassmorphic sphere floating in dark space with internal golden light reflections and soft shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6XqS-KT14QDtTZvv7toRiygdckMQsElkNNObbqaSnMVbc83WXIe0N8Unld32IkXqx-L9I2dbgqyHdjpkrAK6hsZl1ZDUljH4Qz7fj1gPpBNKYlNndzAqjcROH_EoGu0I0KGmcuVvaVb6U0WqchdW_jrjwvVdE7lSP101t16KXhrVjOju9wA5IGZXhpEikjzuLhlJpe_cezk0Q3svjdkKErm57KVZPGFfY8mS3T94Ryb_bn0VVekVANvpoH2pQ-CrDhy4slCuATJs"/>
+</div>
+<div class="space-y-3 px-1">
+<p class="text-body-md text-stone-300 leading-relaxed">
+                            Sunday state of mind. Soft glass, hard light. 🫧
+                        </p>
+<div class="flex items-center gap-6 pt-2">
+<button class="flex items-center gap-2 text-stone-500 hover:text-yellow-400 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="text-label-sm">842</span>
+</button>
+<button class="flex items-center gap-2 text-stone-500 hover:text-blue-400 transition-colors">
+<span class="material-symbols-outlined text-xl">comment</span>
+<span class="text-label-sm">32</span>
+</button>
+<button class="ml-auto text-stone-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Right Sidebar: Trends & Suggested -->
+<aside class="hidden xl:block w-[350px] p-6 space-y-6">
+<!-- Search Bar -->
+<div class="relative sticky top-4 z-20">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-500">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full py-3 pl-12 pr-4 text-on-surface placeholder-stone-500 focus:ring-2 focus:ring-yellow-400 transition-all outline-none" placeholder="Search eMojo" type="text"/>
+</div>
+<!-- Trending Emojis -->
+<section class="bg-surface-container rounded-3xl overflow-hidden border border-white/5">
+<div class="p-4 border-b border-white/5">
+<h2 class="font-headline-md text-lg">Trending Now</h2>
+</div>
+<div class="divide-y divide-white/5">
+<a class="block p-4 hover:bg-white/5 transition-colors group" href="#">
+<p class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">Trending in Visuals</p>
+<div class="flex justify-between items-center mt-1">
+<h3 class="font-bold text-on-surface">#GlassMorph</h3>
+<span class="text-xl">🫧</span>
+</div>
+<p class="text-label-sm text-stone-500 mt-1">12.4k Mojos</p>
+</a>
+<a class="block p-4 hover:bg-white/5 transition-colors group" href="#">
+<p class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">Global Event</p>
+<div class="flex justify-between items-center mt-1">
+<h3 class="font-bold text-on-surface">#CyberSpring</h3>
+<span class="text-xl">🌸</span>
+</div>
+<p class="text-label-sm text-stone-500 mt-1">8.1k Mojos</p>
+</a>
+<a class="block p-4 hover:bg-white/5 transition-colors group" href="#">
+<p class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">Art Styles</p>
+<div class="flex justify-between items-center mt-1">
+<h3 class="font-bold text-on-surface">#NeonNoir</h3>
+<span class="text-xl">🌃</span>
+</div>
+<p class="text-label-sm text-stone-500 mt-1">5.9k Mojos</p>
+</a>
+</div>
+<button class="w-full text-left p-4 text-yellow-400 text-label-lg font-bold hover:bg-yellow-400/5 transition-colors">
+                    Show more
+                </button>
+</section>
+<!-- Suggested Creators -->
+<section class="bg-surface-container rounded-3xl overflow-hidden border border-white/5">
+<div class="p-4 border-b border-white/5">
+<h2 class="font-headline-md text-lg">Suggested Creators</h2>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="Creator" class="w-10 h-10 rounded-xl bg-stone-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwfQDI7bdu-Efjl7CejSs0bnDbXnUTGw2z8ph1v0b9EmLBBFKxKdoGmNEkhDwzA7myayTywu7RnrxQA_fSvgyp1w2abYDdItSELUcIH8cvmsIYchtTFvyKt3dRJnJ9TQn4lLEyGVeVR5XaA4sD5nu3WZz4ZLhVbE84Hoxg6fyr6SShPzYe7dJwVfwsRJuzPZSmQSZk8O8IY8UhXacrOVjk0oU_R6oARnZs3R4GSMXApRd4aArwNAES4o9uFGjC8p9mAdLqMNzh_98"/>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-on-surface truncate">ArtByAva</h3>
+<p class="text-stone-500 text-label-sm truncate">@ava_renders</p>
+</div>
+<button class="bg-white text-black px-4 py-1.5 rounded-full text-label-sm font-bold hover:bg-stone-200 transition-all">Follow</button>
+</div>
+<div class="flex items-center gap-3">
+<img alt="Creator" class="w-10 h-10 rounded-xl bg-stone-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeLpZ_1OzMun_bPjNMHveAGK7x55Znu4LW1J8ouBdmbiUsAfpwyodxRn333gUlo1A4CmrvGdH1KggpIYEqX6YwJ6MDaBYGYnOFDzJg3ObIF8xv6MPXYMSvAx_epnn9dnqm9Me-7Lx3zQIhstL7nQm1R-YtXInkYh4mtXzfBgQVW0nuvtNvchT4bvA8KUn14Ac1JXqE6YfgXWAFBB4Pu40kyvX9pGe9cxll5e3Mym_o4LJbu8MqBT1EGQB0YBQRaXxLmyxwT5Fra28"/>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-on-surface truncate">VectorVibe</h3>
+<p class="text-stone-500 text-label-sm truncate">@vibe_check</p>
+</div>
+<button class="bg-white text-black px-4 py-1.5 rounded-full text-label-sm font-bold hover:bg-stone-200 transition-all">Follow</button>
+</div>
+<div class="flex items-center gap-3">
+<img alt="Creator" class="w-10 h-10 rounded-xl bg-stone-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXynsA-6rj9Dw7WL-H9wxZBc8-1TQ9lCs3iKKw6ZrLFV5Qe6zTJhWVRCBVeSnhQW3esaai03h165np7MQKxcYgEdb6-vgV1mmh84uQLq-U_WdgF_HWHsGwEHskPXDrK0gmrkqQOBBZJn5ZO9fpkWoYUH7ouaJtxtVyF2VPG09vs22g_imuRiBhDTwxzexB5jxGk4sAoJc8JTx_FeeecRxIk69_gedYYUhKxkrIQTF-fSl5J7KEO7DtZ6qC1ezgdOgsgcnp6l1IPrU"/>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-on-surface truncate">RenderRich</h3>
+<p class="text-stone-500 text-label-sm truncate">@richie_r</p>
+</div>
+<button class="bg-white text-black px-4 py-1.5 rounded-full text-label-sm font-bold hover:bg-stone-200 transition-all">Follow</button>
+</div>
+</div>
+<button class="w-full text-left p-4 text-yellow-400 text-label-lg font-bold hover:bg-yellow-400/5 transition-colors">
+                    Show more
+                </button>
+</section>
+<!-- Footer links -->
+<div class="px-4 text-stone-500 text-[11px] leading-relaxed">
+<nav class="flex flex-wrap gap-x-3 gap-y-1">
+<a class="hover:underline" href="#">Terms of Service</a>
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Cookie Policy</a>
+<a class="hover:underline" href="#">Accessibility</a>
+<a class="hover:underline" href="#">Ads info</a>
+<span>© 2024 eMojo Inc.</span>
+</nav>
+</div>
+</aside>
+</div>
+<!-- Mobile FAB -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-yellow-400 text-black rounded-full shadow-2xl flex items-center justify-center z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 600;">add</span>
+</button>
+</body></html>
